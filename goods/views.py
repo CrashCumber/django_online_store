@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from goods.forms import ProductForm
 from goods.models import Product, Banner
-from users.models import User, Basket
+from users.models import User, Basket, Profile
 
 
 def main(request):
@@ -25,12 +25,14 @@ def product(request, product_id):
 
         if request.user.is_authenticated:
             user_id = request.session.get('_auth_user_id')
+            # user = User.objects.get(pk=user_id)
             user = User.objects.get(pk=user_id)
+            profile = Profile.objects.filter(user=user).first()
 
-            basket_item = Basket.objects.filter(user=user, product=item).first()
+            basket_item = Basket.objects.filter(user=profile, product=item).first()
             if basket_item is None:
                 number = int(form.data["number"])
-                Basket.objects.create(user=user, product=item, number=number)
+                Basket.objects.create(user=profile, product=item, number=number)
             else:
                 basket_item.number += int(form.data["number"])
                 basket_item.save()

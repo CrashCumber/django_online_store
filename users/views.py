@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
-from users.models import User, Basket
+from users.models import User, Basket, Profile
 
 
 def register(request):
@@ -34,8 +34,9 @@ def user_basket(request):
 
         user_id = request.session['_auth_user_id']
         user = User.objects.get(pk=user_id)
+        profile = Profile.objects.filter(user=user).first()
 
-        products = Basket.objects.filter(user=user).all()
+        products = Basket.objects.filter(user=profile).all()
 
         return render(request, 'basket.html', {'products': products})
 
