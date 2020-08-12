@@ -16,9 +16,9 @@
 
 <div class="container-fluid" style="background: limegreen">
 
+    <h2>Banners</h2>
     {% for item in banners %}
 
-        <h2>Banners</h2>
         <div style="background: greenyellow; border: dashed black; margin: 2%; padding: 5%" class="justify-content-center">
             {% if item.product %}
                 <a href="/products/{{item.product.id}}/">Product: {{item.product.title}}</a>
