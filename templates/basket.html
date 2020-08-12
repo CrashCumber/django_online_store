@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>Your products</h1>
+
+{% for item in products %}
+
+    <div style="background: lightgreen; border: dashed black; margin: 2% 2% 2% 2% ; padding: 2%">
+
+        <p>{{ item.product.title }}</p>
+        <p > Number : {{ item.number }}</p>
+        <p> Price : {{ item.product.price }} </p>
+
+    </div>
+
+{% endfor %}
+
+<a style="background: gainsboro;margin: 2% 2% 2% 2% ; padding: 2%" href="/"> Go to main page</a>
+
+{% endblock %}
