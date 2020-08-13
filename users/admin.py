@@ -7,15 +7,7 @@ class MembershipInline(admin.TabularInline):
 
 
 @admin.register(Basket)
-class UserAdmin(admin.ModelAdmin):
-    # list_display = ('username',)#, 'email','password' )
+class UserAdminM(admin.ModelAdmin):
     inlines = (MembershipInline,)
 
 
-
-
-# @admin.register(Basket)
-# class BasketAdmin(admin.ModelAdmin):
-#     list_display = ('user', 'product')
-#     filter_horizonta = ['user']
-#     # search_fields = []

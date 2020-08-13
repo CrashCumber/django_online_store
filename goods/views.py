@@ -1,4 +1,3 @@
-from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from goods.forms import ProductForm
@@ -27,7 +26,6 @@ def product(request, product_id):
             return HttpResponse(status=404)
 
         quantity = quantity_form.cleaned_data["quantity"]
-        print('\n\n', type(quantity), quantity, '\n\n')
 
         if request.user.is_authenticated:
             user_id = request.session.get('_auth_user_id')

@@ -1,21 +1,29 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
+from django.core.signals import request_finished
 from django.utils import timezone
 from django.db import models
 from goods.models import Product
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, m2m_changed, pre_save
 from django.dispatch import receiver
 
 
 @receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    print('\n\n\nreceived\n\n\n')
+def create_user_basket(sender, instance, created, **kwargs):
     if created:
         Basket.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
+def save_user(sender, instance, **kwargs):
     instance.basket.save()
+
+    group = Group.objects.get(name='managers')
+    if group in instance.groups.all():
+        instance.groups.add(group)
+        User.objects.filter(id=instance.id).update(is_staff=True)
+    else:
+        User.objects.filter(id=instance.id).update(is_staff=False)
+
 
 
 class Basket(models.Model):
@@ -34,17 +42,3 @@ class BasketItem(models.Model):
     def __str__(self):
         return f"Basket item {self.product} "
 
-
-
-
-
-# class Profile(models.Model):
-#     user = models.OneToOneField(settings.AUTH_USER_MODEL)
-#     # product = models.ManyToManyField(Product, blank=True, null=True)
-#     first_name = models.CharField(max_length=100)
-#     last_name = models.CharField(max_length=100)
-#     email = models.EmailField(max_length=100, unique=True, blank=True, null=True)
-#     password = models.CharField(max_length=100)
-#
-#     def __str__(self):
-#         return f"{self.first_name} {self.last_name}"

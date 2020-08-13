@@ -17,7 +17,6 @@ def register(request):
 
             return redirect('/')
         else:
-            # print(user_form.error_messages)
             user_form = UserRegistrationForm()
             return render(request, 'registration/register.html', {'user_form': user_form})
 
