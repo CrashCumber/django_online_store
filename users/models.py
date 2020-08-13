@@ -10,20 +10,19 @@ from django.dispatch import receiver
 @receiver(post_save, sender=User)
 def create_user_basket(sender, instance, created, **kwargs):
     if created:
+        # instance.is_stuff = True
+        # group = Group.objects.get(name='managers')
+        # instance.groups.add(group)
         Basket.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
-def save_user(sender, instance, **kwargs):
+def save_user(sender, instance, created, **kwargs):
     instance.basket.save()
 
     group = Group.objects.get(name='managers')
     if group in instance.groups.all():
-        instance.groups.add(group)
         User.objects.filter(id=instance.id).update(is_staff=True)
-    else:
-        User.objects.filter(id=instance.id).update(is_staff=False)
-
 
 
 class Basket(models.Model):

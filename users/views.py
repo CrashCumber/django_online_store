@@ -38,4 +38,6 @@ def user_basket(request):
         basket_items = BasketItem.objects.filter(basket=basket).all()
 
         return render(request, 'basket.html', {'basket_items': basket_items})
+    else:
+        return HttpResponse(status=405)
 

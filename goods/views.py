@@ -10,6 +10,8 @@ def main(request):
         products = Product.objects.all()
         banners = Banner.objects.all()
         return render(request, 'main.html', {'products': products, 'banners': banners})
+    else:
+        return HttpResponse(status=405)
 
 
 def product(request, product_id):
@@ -19,7 +21,7 @@ def product(request, product_id):
         quantity_form = ProductForm()
         return render(request, 'product.html', {'product': product, 'quantity_form': quantity_form})
 
-    if request.method == 'POST':
+    elif request.method == 'POST':
         quantity_form = ProductForm(request.POST)
 
         if not quantity_form.is_valid():
@@ -43,5 +45,25 @@ def product(request, product_id):
             return redirect('/basket/')
         else:
             return redirect('/login/')
+    else:
+        return HttpResponse(status=405)
 
 
+def product_delete(request, product_id):
+    if request.method == 'GET':
+        product = Product.objects.filter(id=product_id).first()
+
+        if request.user.is_authenticated:
+            user_id = request.session.get('_auth_user_id')
+            user = User.objects.get(pk=user_id)
+
+            basket = Basket.objects.filter(user=user).first()
+            basket_item = BasketItem.objects.filter(basket=basket, product=product).first()
+
+            basket_item.delete()
+
+            return redirect('/basket/')
+        else:
+            return redirect('/login/')
+    else:
+        return HttpResponse(status=405)

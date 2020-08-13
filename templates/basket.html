@@ -9,12 +9,13 @@
     <div style="background: lightgreen; border: dashed black; margin: 2%; padding: 2%">
 
         <a href="/products/{{item.product.id}}/"> {{ item.product.title }}</a>
+
         <p > Quantity : {{ item.quantity }}</p>
         <p> Price : {{ item.product.price }} per one</p>
 
-        <label>
-            <input type="submit" value="Delete">
-        </label>
+        <div style="background: white; border: dashed black">
+            <a href="/products/{{item.product.id}}/delete/">Delete</a>
+        </div>
 
     </div>
 
