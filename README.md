@@ -48,7 +48,7 @@ This command:
 
 ## Database structure
 
-![](download.jpg)
+![](information/db.jpg)
 
 ## User flow
 - `/` main page contains:  
@@ -84,6 +84,5 @@ This command:
 	- link to `alogin/` page
 
 
-
-![](download-1.jpg)
+![](information/uflow.jpg)
 
