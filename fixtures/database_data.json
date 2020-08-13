@@ -1,0 +1,998 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2020-08-13T13:48:01.481Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Fruit",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2020-08-13T13:48:08.585Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "2",
+            "object_repr": "Rollton",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2020-08-13T13:48:14.272Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "3",
+            "object_repr": "Mutant",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2020-08-13T13:48:23.451Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "4",
+            "object_repr": "Zewa",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2020-08-13T13:48:50.877Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "1",
+            "object_repr": "Apple",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2020-08-13T13:50:32.564Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "2",
+            "object_repr": "Tomato paste",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2020-08-13T13:50:57.786Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "3",
+            "object_repr": "Whey protein",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2020-08-13T13:51:09.832Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "4",
+            "object_repr": "Pear",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2020-08-13T13:51:26.233Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "5",
+            "object_repr": "Paper",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2020-08-13T13:51:51.631Z",
+            "user": 1,
+            "content_type": 8,
+            "object_id": "6",
+            "object_repr": "Chicken soup",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 11,
+        "fields": {
+            "action_time": "2020-08-13T13:53:15.789Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "1",
+            "object_repr": "Very cheap apples",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 12,
+        "fields": {
+            "action_time": "2020-08-13T13:53:47.264Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "2",
+            "object_repr": "Very tasty healthy products",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 13,
+        "fields": {
+            "action_time": "2020-08-13T13:54:27.700Z",
+            "user": 1,
+            "content_type": 9,
+            "object_id": "3",
+            "object_repr": "You will become an athlete",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 14,
+        "fields": {
+            "action_time": "2020-08-13T13:57:53.285Z",
+            "user": 1,
+            "content_type": 3,
+            "object_id": "1",
+            "object_repr": "managers",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 4,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 4,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 4,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 4,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add brand",
+            "content_type": 7,
+            "codename": "add_brand"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change brand",
+            "content_type": 7,
+            "codename": "change_brand"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete brand",
+            "content_type": 7,
+            "codename": "delete_brand"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view brand",
+            "content_type": 7,
+            "codename": "view_brand"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add product",
+            "content_type": 8,
+            "codename": "add_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change product",
+            "content_type": 8,
+            "codename": "change_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete product",
+            "content_type": 8,
+            "codename": "delete_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view product",
+            "content_type": 8,
+            "codename": "view_product"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add banner",
+            "content_type": 9,
+            "codename": "add_banner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change banner",
+            "content_type": 9,
+            "codename": "change_banner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete banner",
+            "content_type": 9,
+            "codename": "delete_banner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view banner",
+            "content_type": 9,
+            "codename": "view_banner"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add basket",
+            "content_type": 10,
+            "codename": "add_basket"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change basket",
+            "content_type": 10,
+            "codename": "change_basket"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete basket",
+            "content_type": 10,
+            "codename": "delete_basket"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view basket",
+            "content_type": 10,
+            "codename": "view_basket"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add basket item",
+            "content_type": 11,
+            "codename": "add_basketitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change basket item",
+            "content_type": 11,
+            "codename": "change_basketitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete basket item",
+            "content_type": 11,
+            "codename": "delete_basketitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view basket item",
+            "content_type": 11,
+            "codename": "view_basketitem"
+        }
+    },
+    {
+        "model": "auth.group",
+        "pk": 1,
+        "fields": {
+            "name": "managers",
+            "permissions": [
+                1,
+                2,
+                3,
+                4,
+                9,
+                10,
+                11,
+                12,
+                5,
+                6,
+                7,
+                8,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                33,
+                34,
+                35,
+                36,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                21,
+                22,
+                23,
+                24,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44
+            ]
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$919IStOm4NRb$1ripahyvARzfuzWl3nq9OcFOAOclE6ZS0etqchXUJq4=",
+            "last_login": "2020-08-13T13:57:17.850Z",
+            "is_superuser": true,
+            "username": "manager",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2020-08-13T13:45:41.749Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$PrIzoSwwRHMa$Add374QBXoRCMIcNb1D6sMtLqSPshSqXDK5RkJlPUrQ=",
+            "last_login": "2020-08-13T13:55:08.616Z",
+            "is_superuser": false,
+            "username": "Bob",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-13T13:55:08.435Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$216000$hWZ1cGeAoP0K$M+kSiHxHuC/LyZTmWzTatQZVPub+I0+aTvrr/Krv4zs=",
+            "last_login": "2020-08-13T13:56:33.209Z",
+            "is_superuser": false,
+            "username": "Kate",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-08-13T13:56:33.034Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "goods",
+            "model": "brand"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "goods",
+            "model": "product"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "goods",
+            "model": "banner"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "users",
+            "model": "basket"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "users",
+            "model": "basketitem"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "nbdmgfwiqzkzqj3n35c713cbk87uax2f",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hAGsDAu3XsGMgNUqgaS0q6Md7dNutDtf-_9twi0LiWsPc9hSuIiQJx-N6b4zHUH6UH13mRsdZknlrsiD9rlraX8uh7u30GhXrZ6ZA9J2cGyZnbeG6coJkUAYM856TErzhoVDrhh4wkjOMPeIYE26MXnC90cN0Q:1k6DjJ:MfRdCBJ57TdTdGUiWn438pRn1QPWt_x-o3Ao5lueGzA",
+            "expire_date": "2020-08-27T13:57:17.856Z"
+        }
+    },
+    {
+        "model": "goods.brand",
+        "pk": 1,
+        "fields": {
+            "title": "Fruit"
+        }
+    },
+    {
+        "model": "goods.brand",
+        "pk": 2,
+        "fields": {
+            "title": "Rollton"
+        }
+    },
+    {
+        "model": "goods.brand",
+        "pk": 3,
+        "fields": {
+            "title": "Mutant"
+        }
+    },
+    {
+        "model": "goods.brand",
+        "pk": 4,
+        "fields": {
+            "title": "Zewa"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 1,
+        "fields": {
+            "brand": 1,
+            "title": "Apple",
+            "price": 50,
+            "definition": null,
+            "image": "pictures/apple.jpg"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 2,
+        "fields": {
+            "brand": 2,
+            "title": "Tomato paste",
+            "price": 10,
+            "definition": "pasta with the best tomatoes",
+            "image": "pictures/rollton.jpg"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 3,
+        "fields": {
+            "brand": 3,
+            "title": "Whey protein",
+            "price": 100,
+            "definition": "A lot of protein",
+            "image": "pictures/whey.jpg"
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 4,
+        "fields": {
+            "brand": 1,
+            "title": "Pear",
+            "price": 40,
+            "definition": null,
+            "image": ""
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 5,
+        "fields": {
+            "brand": 4,
+            "title": "Paper",
+            "price": 50,
+            "definition": "Not bad",
+            "image": ""
+        }
+    },
+    {
+        "model": "goods.product",
+        "pk": 6,
+        "fields": {
+            "brand": 2,
+            "title": "Chicken soup",
+            "price": 5,
+            "definition": "test",
+            "image": ""
+        }
+    },
+    {
+        "model": "goods.banner",
+        "pk": 1,
+        "fields": {
+            "brand": 1,
+            "product": 1,
+            "title": "Very cheap apples",
+            "definition": "50 percent discount"
+        }
+    },
+    {
+        "model": "goods.banner",
+        "pk": 2,
+        "fields": {
+            "brand": 2,
+            "product": 6,
+            "title": "Very tasty healthy products",
+            "definition": "90 percent discount"
+        }
+    },
+    {
+        "model": "goods.banner",
+        "pk": 3,
+        "fields": {
+            "brand": null,
+            "product": 3,
+            "title": "You will become an athlete",
+            "definition": "10 percent discount on each 20 cans"
+        }
+    },
+    {
+        "model": "users.basket",
+        "pk": 1,
+        "fields": {
+            "user": 1
+        }
+    },
+    {
+        "model": "users.basket",
+        "pk": 2,
+        "fields": {
+            "user": 2
+        }
+    },
+    {
+        "model": "users.basket",
+        "pk": 3,
+        "fields": {
+            "user": 3
+        }
+    },
+    {
+        "model": "users.basketitem",
+        "pk": 1,
+        "fields": {
+            "basket": 2,
+            "product": 5,
+            "added_date": "2020-08-13T13:55:24.011Z",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "users.basketitem",
+        "pk": 2,
+        "fields": {
+            "basket": 2,
+            "product": 1,
+            "added_date": "2020-08-13T13:55:39.547Z",
+            "quantity": 9
+        }
+    },
+    {
+        "model": "users.basketitem",
+        "pk": 3,
+        "fields": {
+            "basket": 2,
+            "product": 6,
+            "added_date": "2020-08-13T13:55:47.429Z",
+            "quantity": 6
+        }
+    },
+    {
+        "model": "users.basketitem",
+        "pk": 4,
+        "fields": {
+            "basket": 3,
+            "product": 3,
+            "added_date": "2020-08-13T13:56:40.113Z",
+            "quantity": 3
+        }
+    },
+    {
+        "model": "users.basketitem",
+        "pk": 5,
+        "fields": {
+            "basket": 3,
+            "product": 5,
+            "added_date": "2020-08-13T13:56:54.066Z",
+            "quantity": 10
+        }
+    },
+    {
+        "model": "users.basketitem",
+        "pk": 6,
+        "fields": {
+            "basket": 3,
+            "product": 2,
+            "added_date": "2020-08-13T13:57:01.335Z",
+            "quantity": 12
+        }
+    },
+    {
+        "model": "users.basketitem",
+        "pk": 7,
+        "fields": {
+            "basket": 3,
+            "product": 4,
+            "added_date": "2020-08-13T13:57:07.305Z",
+            "quantity": 1
+        }
+    }
+]

@@ -1,7 +1,5 @@
 data_un/
 db.sqlite3
-fixtures/
-static/
 .DS_Store/
 .DS_Store
 # Byte-compiled / optimized / DLL files

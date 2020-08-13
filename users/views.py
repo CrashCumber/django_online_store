@@ -7,6 +7,11 @@ from users.models import User, Basket, BasketItem
 
 
 def register(request):
+    """Registration endpoint.
+    :param request
+    :return: for GET - registration form.
+             for POST - if form is valid, redirect user to main page. On failure render form again.
+    """
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
 
@@ -29,6 +34,10 @@ def register(request):
 
 @login_required
 def user_basket(request):
+    """Basket endpoint
+    :param request
+    :return: user purchase with link on purchase.
+    """
     if request.method == 'GET':
 
         user_id = request.session['_auth_user_id']

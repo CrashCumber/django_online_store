@@ -6,6 +6,10 @@ from users.models import User, Basket, BasketItem
 
 
 def main(request):
+    """Main page endpoint.
+    :param request
+    :return: main page with banners and products.
+    """
     if request.method == 'GET':
         products = Product.objects.all()
         banners = Banner.objects.all()
@@ -15,6 +19,12 @@ def main(request):
 
 
 def product(request, product_id):
+    """ Product endpoint with information and ability to buy.
+    :param request:
+    :param product_id: id product from Product model.
+    :return: for GET - product information page
+             for POST - save product in user basket and redirect to basket.
+    """
     product = Product.objects.filter(id=product_id).first()
 
     if request.method == 'GET':
@@ -50,6 +60,12 @@ def product(request, product_id):
 
 
 def product_delete(request, product_id):
+    """Delete product endpoint.
+    :param request
+    :param product_id: id for product
+    :return: for auth user - delete product from user basket and redirect to basket.
+             for not auth user - redirect to login.
+    """
     if request.method == 'GET':
         product = Product.objects.filter(id=product_id).first()
 

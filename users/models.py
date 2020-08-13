@@ -10,9 +10,6 @@ from django.dispatch import receiver
 @receiver(post_save, sender=User)
 def create_user_basket(sender, instance, created, **kwargs):
     if created:
-        # instance.is_stuff = True
-        # group = Group.objects.get(name='managers')
-        # instance.groups.add(group)
         Basket.objects.create(user=instance)
 
 
@@ -20,8 +17,8 @@ def create_user_basket(sender, instance, created, **kwargs):
 def save_user(sender, instance, created, **kwargs):
     instance.basket.save()
 
-    group = Group.objects.get(name='managers')
-    if group in instance.groups.all():
+    group = Group.objects.filter(name='managers').first()
+    if group is not None and group in instance.groups.all():
         User.objects.filter(id=instance.id).update(is_staff=True)
 
 
