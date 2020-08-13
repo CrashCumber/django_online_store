@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
-from users.models import User, Basket, Profile
+from users.models import User, Basket, BasketItem
 
 
 def register(request):
@@ -34,32 +34,9 @@ def user_basket(request):
 
         user_id = request.session['_auth_user_id']
         user = User.objects.get(pk=user_id)
-        profile = Profile.objects.filter(user=user).first()
 
-        products = Basket.objects.filter(user=profile).all()
+        basket = Basket.objects.filter(user=user).first()
+        basket_items = BasketItem.objects.filter(basket=basket).all()
 
-        return render(request, 'basket.html', {'products': products})
+        return render(request, 'basket.html', {'basket_items': basket_items})
 
-#
-# def user_login(request):
-#     if request.method == 'POST':
-#         form = LoginForm(request.POST)
-#
-#         if form.is_valid():
-#
-#             data = form.cleaned_data
-#             user = authenticate(username=data['username'], password=data['password'])
-#
-#             if user is not None:
-#
-#                 if user.is_active:
-#                     login(request, user)
-#                     return redirect('/main')
-#                 else:
-#                     return HttpResponse('Disabled account')
-#             else:
-#                 return HttpResponse('Invalid login')
-#
-#     else:
-#         form = LoginForm()
-#     return render(request, 'registration/login.html', {'form': form})

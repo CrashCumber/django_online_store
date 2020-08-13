@@ -4,18 +4,22 @@
 
 <h1>Your products</h1>
 
-{% for item in products %}
+{% for item in basket_items %}
 
-    <div style="background: lightgreen; border: dashed black; margin: 2% 2% 2% 2% ; padding: 2%">
+    <div style="background: lightgreen; border: dashed black; margin: 2%; padding: 2%">
 
         <a href="/products/{{item.product.id}}/"> {{ item.product.title }}</a>
-        <p > Number : {{ item.number }}</p>
-        <p> Price : {{ item.product.price }} </p>
+        <p > Quantity : {{ item.quantity }}</p>
+        <p> Price : {{ item.product.price }} per one</p>
+
+        <label style="background: lime">
+            <input type="checkbox" value="Delete">
+        </label>
 
     </div>
 
 {% endfor %}
 
-<a style="background: gainsboro;margin: 2% 2% 2% 2% ; padding: 2%" href="/"> Go to main page</a>
+<a style="background: gainsboro; margin: 2%; padding: 2%" href="/"> Go to main page</a>
 
 {% endblock %}

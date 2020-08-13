@@ -6,18 +6,37 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
-
-
-
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
+    print('\n\n\nreceived\n\n\n')
     if created:
-        Profile.objects.create(user=instance)
+        Basket.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+    instance.basket.save()
+
+
+class Basket(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.user}`s basket"
+
+
+class BasketItem(models.Model):
+    basket = models.ForeignKey(Basket, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    added_date = models.DateTimeField(default=timezone.now)
+    quantity = models.IntegerField()
+
+    def __str__(self):
+        return f"Basket item {self.product} "
+
+
+
+
 
 # class Profile(models.Model):
 #     user = models.OneToOneField(settings.AUTH_USER_MODEL)
@@ -29,19 +48,3 @@ def save_user_profile(sender, instance, **kwargs):
 #
 #     def __str__(self):
 #         return f"{self.first_name} {self.last_name}"
-
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-
-class Basket(models.Model):
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    added_date = models.DateTimeField(default=timezone.now)
-    number = models.IntegerField()
-
-    def __str__(self):
-        return f"Basket item {self.product} of {self.user}"
-
-

@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from goods.forms import ProductForm
 from goods.models import Product, Banner
-from users.models import User, Basket, Profile
+from users.models import User, Basket, BasketItem
 
 
 def main(request):
@@ -13,28 +14,32 @@ def main(request):
 
 
 def product(request, product_id):
-    form = ProductForm()
+    product = Product.objects.filter(id=product_id).first()
 
     if request.method == 'GET':
-        item = Product.objects.filter(id=product_id).first()
-        return render(request, 'item.html', {'item': item, 'item_form': form})
+        quantity_form = ProductForm()
+        return render(request, 'product.html', {'product': product, 'quantity_form': quantity_form})
 
     if request.method == 'POST':
-        form = ProductForm(request.POST)
-        item = Product.objects.filter(id=product_id).first()
+        quantity_form = ProductForm(request.POST)
+
+        if not quantity_form.is_valid():
+            return HttpResponse(status=404)
+
+        quantity = quantity_form.cleaned_data["quantity"]
+        print('\n\n', type(quantity), quantity, '\n\n')
 
         if request.user.is_authenticated:
             user_id = request.session.get('_auth_user_id')
-            # user = User.objects.get(pk=user_id)
             user = User.objects.get(pk=user_id)
-            profile = Profile.objects.filter(user=user).first()
 
-            basket_item = Basket.objects.filter(user=profile, product=item).first()
+            basket = Basket.objects.filter(user=user).first()
+            basket_item = BasketItem.objects.filter(basket=basket, product=product).first()
+
             if basket_item is None:
-                number = int(form.data["number"])
-                Basket.objects.create(user=profile, product=item, number=number)
+                BasketItem.objects.create(basket=basket, product=product, quantity=int(quantity))
             else:
-                basket_item.number += int(form.data["number"])
+                basket_item.quantity += int(quantity)
                 basket_item.save()
 
             return redirect('/basket/')
@@ -42,20 +47,3 @@ def product(request, product_id):
             return redirect('/login/')
 
 
-    # if request.method == 'DELETE':
-    #
-    #     user_id = request.session['user_id']
-    #     user = User.objects.get(pk=user_id)
-    #     item = Product.objects.filter(id=product_id).first()
-    #
-    #     item = Basket.objects.filter(user=user, product=item).first()
-    #     item.delete()
-
-    # if request.method == 'PUT':
-    #
-    #     user_id = request.session['user_id']
-    #     user = User.objects.get(pk=user_id)
-    #     item = Product.objects.filter(id=product_id).first()
-    #
-    #     item = Basket.objects.filter(user=user, product=item).first()
-        # item.delete()

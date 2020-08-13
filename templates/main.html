@@ -23,6 +23,11 @@
             {% if item.product %}
                 <a href="/products/{{item.product.id}}/">Product: {{item.product.title}}</a>
             {% endif %}
+
+            {% if item.brand %}
+                <div>Brand: {{item.brand.title}}</div>
+            {% endif %}
+
            <div class="justify-content-center">Title: {{ item.title }} </div>
         </div>
 

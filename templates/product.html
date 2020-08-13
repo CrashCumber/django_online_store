@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+        <p style="background: greenyellow; border: dashed black; margin: 2%; padding: 2%">Name: {{ product.title }}</p>
+
+        {% if product.definition %}
+            <div style="background: greenyellow; border: dashed black; margin: 2%; padding: 2%">{{ product.definition }}</div>
+        {% endif %}
+
+        <p style="background: limegreen; border: dashed black; margin: 2%; padding: 2%">It is cost {{ product.price }} per 1</p>
+
+        {% if product.image %}
+            <img src="/static/media/{{product.image}}">
+        {% endif %}
+
+
+        <form style="background: lightgreen; border: dashed black; margin: 2%; padding: 2%" method="post">
+            <p style=" margin: 2%; padding: 2%">How many are you want to buy?</p>
+             {{ quantity_form.as_p }}
+             {% csrf_token %}
+
+            <p><input type="submit" value="Add product"></p>
+        </form>
+
+<a style="background: gainsboro; margin: 2%; padding: 2%" href="/"> Go to main page</a>
+
+{% endblock %}
