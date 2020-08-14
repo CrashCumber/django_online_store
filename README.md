@@ -19,11 +19,11 @@
 5. Upload data from fixture   
 `python manage.py loaddata fixtures/database_data.json`    
 This command:  
-	- import users, banners, products, baskets.
-	- create _**superuser with name "manager", password "manager"**_.
-	- create _**user: "Bob" , password: "22bobbob"**_
-	- create _**user: "Kate", password : "333exexex"**_
-	- create group "managers".
+	- imports users, banners, products, baskets.
+	- creates _**superuser with name "manager", password "manager"**_.
+	- creates _**user: "Bob" , password: "22bobbob"**_
+	- creates _**user: "Kate", password : "333exexex"**_
+	- creates group "managers".
 6. Run server  
 `python manage.py runserver`
 
@@ -97,3 +97,5 @@ It contains:
 - ability to add product, brand, banner and information about it( including images for products)
 - information about users and group. 
 - ability to add users, groups and modify it.
+
+
