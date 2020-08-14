@@ -1,14 +1,13 @@
 from django.contrib import admin
-from .models import User, Basket
-
-admin.site.unregister(User)
+from .models import Basket, BasketItem
 
 
 class MembershipInline(admin.TabularInline):
-    model = Basket
+    model = BasketItem
 
 
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'email', )
+@admin.register(Basket)
+class UserAdminM(admin.ModelAdmin):
     inlines = (MembershipInline,)
+
+

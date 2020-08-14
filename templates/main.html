@@ -5,24 +5,29 @@
 <div style="background: greenyellow; border: dashed black; margin: 2% 2% 2% 2% ; padding: 2%" >
 
     {% if request.user.is_authenticated %}
-            <a style="background: lightgoldenrodyellow; padding: 3%" href="/basket/">Your Basket</a>
-            <a style="background: lightgoldenrodyellow; padding: 3%" href="/logout/">Logout</a>
+            <a style="background: lightgoldenrodyellow; padding: 3%" href="/basket">Your Basket</a>
+            <a style="background: lightgoldenrodyellow; padding: 3%" href="/logout">Logout</a>
             <p style="padding: 3%">Hello {{request.user.username}}</p>
     {% else %}
-            <a style="background: gainsboro; margin: 2% 2% 2% 2% ; padding: 2%" href="/login/">Login</a>
+            <a style="background: gainsboro; margin: 2%; padding: 2%" href="/login">Login</a>
     {% endif %}
 
 </div>
 
 <div class="container-fluid" style="background: limegreen">
 
+    <h2>Banners</h2>
     {% for item in banners %}
 
-        <h2>Banners</h2>
         <div style="background: greenyellow; border: dashed black; margin: 2%; padding: 5%" class="justify-content-center">
             {% if item.product %}
                 <a href="/products/{{item.product.id}}/">Product: {{item.product.title}}</a>
             {% endif %}
+
+            {% if item.brand %}
+                <div>Brand: {{item.brand.title}}</div>
+            {% endif %}
+
            <div class="justify-content-center">Title: {{ item.title }} </div>
         </div>
 
